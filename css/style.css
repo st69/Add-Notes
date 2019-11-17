@@ -102,7 +102,15 @@ li.post-item {
 }
 
 p.text {
-    width: 97%;
+    width: 84%;
+}
+
+span.date {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    font-size: 13px;
+    color: #807272;
 }
 
 .del {
@@ -190,7 +198,7 @@ input#uploadImage {
     }
 }
 
-@media screen and (max-width: 481px) and (max-width: 767px) {
+@media screen and (min-width: 481px) and (max-width: 767px) {
     .form {
         width: 85%;
     }
@@ -206,6 +214,14 @@ input#uploadImage {
 @media screen and (max-width: 480px) {
     .form {
         width: 81%;
+    }
+
+    ul.list-posts {
+        width: 95%;
+    }
+
+    input#delete-all-posts {
+        width: 35%;
     }
 
 }

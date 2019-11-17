@@ -25,19 +25,22 @@ function getTasks() {
         items = JSON.parse(localStorage.getItem('items'));
     }
     items.forEach((e) => {
+
         let li = document.createElement("li");
         let p = document.createElement("p");
         let span = document.createElement("span");
-
+  let datePrint = document.createElement("span");
         li.setAttribute("class", "post-item");
         p.setAttribute("class", "text");
         span.setAttribute("class", "del");
-
-        p.innerText = e;
+        datePrint.setAttribute("class", "date")
+        p.innerText = e[0];
         span.innerText = "X";
+        datePrint.innerText = e[1]
 
         li.appendChild(p);
         li.appendChild(span);
+        li.appendChild(datePrint);
 
         listPosts.appendChild(li)
     })
@@ -48,6 +51,14 @@ function getTasks() {
 
 function addNewPost() {
 
+    let date = new Date();
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+    let day = date.getDate()
+    let month =date.getMonth() + 1
+    let year = date.getFullYear()
+    let fullDate = `${hours}:${minutes} ${day}.${month}.${year}`
+console.log(fullDate)
     if(noteTextarea.value == "" ) {
         return alert("Note cannot be empty!")
     }
@@ -56,17 +67,21 @@ function addNewPost() {
     let li = document.createElement("li");
     let p = document.createElement("p");
     let span = document.createElement("span");
+    let datePrint = document.createElement("span");
 
     li.setAttribute("class", "post-item");
     p.setAttribute("class", "text");
     span.setAttribute("class", "del");
-    // span.setAttribute("onclick", "delItem(this)");
+    datePrint.setAttribute("class", "date")
+ 
 
     p.innerText = noteTextarea.value;
     span.innerText = "X";
+    datePrint.innerText = fullDate
 
     li.appendChild(p);
     li.appendChild(span);
+    li.appendChild(datePrint)
 
     listPosts.appendChild(li)
 
@@ -75,8 +90,8 @@ function addNewPost() {
     } else {
         items = JSON.parse(localStorage.getItem("items"))
     }
-
-    items.push(p.innerText)
+    let it = [p.innerText, datePrint.innerText]
+    items.push(it)
     localStorage.setItem("items", JSON.stringify(items))
 
     noteTextarea.value = ""
