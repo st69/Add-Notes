@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add your notes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="add-post-form">
+            <div class="form">
+                <textarea name="note" id="note-textarea" placeholder="Add your note..." cols="30" rows="5"></textarea>
+                <div class="upload">
+                <label for="uploadImage">Upload</label>
+                <input type="file" name="image" id="uploadImage">
+            </div>
+                <div class="buttons">
+                    <input type="submit" id="add-post" value="Add post">
+                    <input type="text" id="filter" placeholder="Search...">
+                    <input type="button" id="clear-input" value="Clear">
+                </div>
+            </div>
+        </div>
+        <div class="posts">
+            <ul class="list-posts">
+            </ul>
+        </div>
+        
+        <div class="deleteAll">
+            <input type="button" value="Delete all posts" id="delete-all-posts">
+        </div>
+        
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
