@@ -20,6 +20,11 @@ body {
     align-items: center;
 }
 
+.form-title {
+    font-size: 35px;
+    color: #fff;
+}
+
 .form {
     display: flex;
     justify-content: center;
