@@ -189,15 +189,22 @@ input#uploadImage {
     }
 }
 
-@media screen and  (max-width: 767px) {
+@media screen and (max-width: 481px) and (max-width: 767px) {
     .form {
-        width: 90%;
+        width: 85%;
     }
     ul.list-posts {
-        width: 98%;
+        width: 95%;
     }
 
     input#delete-all-posts {
         width: 35%;
     }
+}
+
+@media screen and (max-width: 480px) {
+    .form {
+        width: 81%;
+    }
+
 }
