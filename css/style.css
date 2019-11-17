@@ -44,6 +44,7 @@ textarea#note-textarea {
     border-top-left-radius: 11px;
     border-bottom-right-radius: 11px;
     padding: 5%;
+    outline: none;
 }
 
 .buttons {
