@@ -88,7 +88,6 @@ function clearFunc() {
 
 function delItem(e) {
     // e.parentNode.remove()
-// debugger
     if(e.target.className == "del") {
         // console.log(e.target.parentElement.innerText + "  is pressed!")
         if(confirm("Are you sure?")) {
@@ -101,7 +100,7 @@ function delItem(e) {
 
 function removeFromLS(post) {
     let items = JSON.parse(localStorage.getItem("items"));
-// debugger
+
     items.map((task, index) => {
         if(post.children[0].textContent === task) {
             items.splice(index, 1)
@@ -115,7 +114,7 @@ function deleteAllFromStorage() {
     localStorage.clear()
     // listPosts.innerHTML = "" // first way
 
-    //second faster way
+    //second way
     while(listPosts.firstChild) {
         listPosts.removeChild(listPosts.firstChild)
         
@@ -134,6 +133,3 @@ function filterPosts(e) {
     })
 }
 
-
-
-//ostalo je da se poboljsa remove item i da se pojedinacno uklanjaju iz local storage-a
