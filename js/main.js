@@ -115,9 +115,9 @@ function delItem(e) {
 
 function removeFromLS(post) {
     let items = JSON.parse(localStorage.getItem("items"));
-
+debugger
     items.map((task, index) => {
-        if(post.children[0].textContent === task) {
+        if(post.children[0].textContent === task[0]) {
             items.splice(index, 1)
         }
     })
