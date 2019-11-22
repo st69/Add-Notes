@@ -75,7 +75,7 @@ console.log(fullDate)
     datePrint.setAttribute("class", "date")
  
 
-    p.innerText = noteTextarea.value.replace(/\n/g, "<br />");;
+    p.innerText = noteTextarea.value;
     span.innerText = "X";
     datePrint.innerText = fullDate
 
@@ -115,7 +115,7 @@ function delItem(e) {
 
 function removeFromLS(post) {
     let items = JSON.parse(localStorage.getItem("items"));
-debugger
+
     items.map((task, index) => {
         if(post.children[0].textContent === task[0]) {
             items.splice(index, 1)
