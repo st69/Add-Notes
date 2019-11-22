@@ -75,7 +75,7 @@ console.log(fullDate)
     datePrint.setAttribute("class", "date")
  
 
-    p.innerText = noteTextarea.value;
+    p.innerText = noteTextarea.value.replace(/\n/g, "<br />");;
     span.innerText = "X";
     datePrint.innerText = fullDate
 
